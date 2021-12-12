@@ -1,0 +1,36 @@
+﻿@page "/AddFlight"
+@inject FlightService _flightService;
+@inject NavigationManager _navigationManager;
+<h3>Add Flight</h3>
+
+<EditForm Model="@Flight" OnValidSubmit="@AddFlightAsync">
+    <FlightFields Flight="@Flight"></FlightFields>
+    <button type="submit" class="btn btn-primary">
+        <span class="oi oi-pencil"></span>
+        Add Flight
+    </button>
+    <button type="button" @onclick="Close">
+        <span class="oi oi-media-skip-backward"></span>
+        Close
+    </button>
+</EditForm>
+
+@code {
+    public Flight Flight { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        Flight = new Flight();
+        Flight.FlightDate = DateTime.Now;
+    }
+
+    private async Task AddFlightAsync()
+    {
+        await _flightService.AddFlightAsync(Flight);
+        Close();
+    }
+
+    private void Close()
+    {
+        _navigationManager.NavigateTo("/");
+    }
+}

@@ -1,0 +1,74 @@
+﻿@page "/"
+@using FlightManagementBlazorServer.Services
+@inject FlightService _flightService;
+@inject NavigationManager _navigationManager;
+
+
+<h3>Flights</h3>
+<button type="button" @onclick="OpenAddFlightPage">
+    <span class="oi oi-plus"></span>
+    Add Flight
+</button>
+@if(Flights == null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Carrier</th>
+                <th>Airport to</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var flight in Flights)
+            {
+                <tr>
+                    <td>@flight.Number</td>
+                    <td>@flight.FlightDate</td>
+                    <td>@flight.FlightTime</td>
+                    <td>@flight.Carrier</td>
+                    <td>@flight.AirportTo</td>
+                    <td>
+                        <button type="button" @onclick="() => DeleteFlight(flight.Id)">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                        <button type="button" @onclick="() => ArchiveFlight(flight.Id)">
+                            <span class="oi oi-transfer"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+
+}
+
+@code {
+    private List<Flight> Flights;
+    protected override async Task OnInitializedAsync()
+    {
+        Flights = await _flightService.GetFlights();
+    }
+
+    private void OpenAddFlightPage()
+    {
+        _navigationManager.NavigateTo("/AddFlight");
+    }
+
+    private async Task DeleteFlight(int flightId)
+    {
+        await _flightService.DeleteFlight(flightId);
+    }
+
+    private async Task ArchiveFlight(int flightId)
+    {
+        await _flightService.ArchiveFlight(flightId);
+    }
+}

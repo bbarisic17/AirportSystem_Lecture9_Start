@@ -1,0 +1,21 @@
+﻿<div class="flightFields">
+    <label for="flightNumber">Flight Number</label>
+    <InputText id="flightNumber" @bind-Value="@Flight.Number" class="form-control"></InputText>
+
+    <label for="flightDate">Flight Date</label>
+    <InputDate id="flightDate" @bind-Value="@Flight.FlightDate" class="form-control"></InputDate>
+
+    <label for="flightTime">Flight Time</label>
+    <InputText id="flightTime" @bind-Value="@Flight.FlightTime" class="form-control"></InputText>
+
+    <label for="carrier">Carrier</label>
+    <InputText id="carrier" @bind-Value="@Flight.Carrier" class="form-control"></InputText>
+
+    <label for="airportTo">Airport To</label>
+    <InputText id="airportTo" @bind-Value="@Flight.AirportTo" class="form-control"></InputText>
+</div>
+
+@code {
+    [Parameter]
+    public Flight Flight { get; set; }
+}

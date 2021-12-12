@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a44b1101-7f48-43dc-adb7-cacd0a9b05f2": {
+      "ProjectGuid": "a44b1101-7f48-43dc-adb7-cacd0a9b05f2",
+      "DisplayName": "FlightManagementWebAPI",
+      "ColorIndex": 0
+    },
+    "b23c621e-fba5-4609-b205-7db3b105c8f9": {
+      "ProjectGuid": "b23c621e-fba5-4609-b205-7db3b105c8f9",
+      "DisplayName": "DomainModel",
+      "ColorIndex": 1
+    },
+    "b9ec9c61-27a8-4ca7-934c-4879b9f3dae2": {
+      "ProjectGuid": "b9ec9c61-27a8-4ca7-934c-4879b9f3dae2",
+      "DisplayName": "FlightManagementBlazorServer",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}
