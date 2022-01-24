@@ -1,0 +1,71 @@
+﻿@page "/CarrierList"
+@inject NavigationManager _navigationManager;
+@inject CarrierService _carrierService;
+
+<h3>Carrier List</h3>
+<button type="button" class="btn btn-success" @onclick="ShowAddCarrierPage">
+    <span class="oi oi-plus"></span>
+    Add Carrier
+</button>
+@if(Carriers == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var carrier in Carriers)
+            {
+                <tr>
+                    <td>@carrier.Name</td>
+                    <td>@carrier.Country</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" @onclick="() => OpenEditCarrierPage(carrier.Id)">
+                            <span class="oi oi-pencil"></span>
+                        </button>
+                        <button type="button" class="btn btn-danger" @onclick="() => DeleteCarrierAsync(carrier.Id)">
+                            <span class="oi oi-delete"></span>
+                        </button>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public List<Carrier> Carriers { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Carriers = await GetCarriersAsync();
+    }
+    private void ShowAddCarrierPage()
+    {
+        _navigationManager.NavigateTo("/AddCarrier");
+    }
+
+    private void OpenEditCarrierPage(int carrierId)
+    {
+        _navigationManager.NavigateTo($"/EditCarrier/{carrierId}");
+    }
+
+    private async Task DeleteCarrierAsync(int carrierId)
+    {
+        await _carrierService.DeleteCarrierAsync(carrierId);
+        Carriers = await GetCarriersAsync();
+    }
+
+    private async Task<List<Carrier>> GetCarriersAsync()
+    {
+        return await _carrierService.GetCarriersAsync();
+    }
+}

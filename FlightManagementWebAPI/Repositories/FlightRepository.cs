@@ -1,5 +1,6 @@
 ﻿using DomainModel.Models;
 using FlightManagementWebAPI.DatabaseContext;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,9 +14,9 @@ namespace FlightManagementWebAPI.Repositories
             _airportSystemContext = airportSystemContext;
         }
 
-        public List<Flight> GetFlights()
+        public List<Flight> GetFlights(bool archived)
         {
-            return _airportSystemContext.Flights.ToList();
+            return _airportSystemContext.Flights.Include(flight => flight.Carrier).Where(flight => flight.IsArchived == archived).ToList();
         }
 
         public void InsertFlight(Flight flight)
@@ -37,9 +38,9 @@ namespace FlightManagementWebAPI.Repositories
             {
                 flightForUpdate.Number = flight.Number;
                 flightForUpdate.AirportTo = flight.AirportTo;
-                flightForUpdate.Carrier = flight.Carrier;
                 flightForUpdate.FlightDate = flight.FlightDate;
                 flightForUpdate.FlightTime = flight.FlightTime;
+                flightForUpdate.CarrierId = flight.CarrierId;
 
                 _airportSystemContext.SaveChanges();
             }
@@ -63,11 +64,6 @@ namespace FlightManagementWebAPI.Repositories
                 flight.IsArchived = true;
                 _airportSystemContext.SaveChanges();
             }
-        }
-
-        public IEnumerable<Flight> GetArchivedFlights()
-        {
-            return _airportSystemContext.Flights.Where(flight => flight.IsArchived).ToList();
         }
     }
 }

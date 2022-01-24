@@ -5,11 +5,11 @@
 
 <EditForm Model="@Flight" OnValidSubmit="@AddFlightAsync">
     <FlightFields Flight="@Flight"></FlightFields>
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-success">
         <span class="oi oi-pencil"></span>
         Add Flight
     </button>
-    <button type="button" @onclick="Close">
+    <button type="button" class="btn btn-secondary" @onclick="Close">
         <span class="oi oi-media-skip-backward"></span>
         Close
     </button>

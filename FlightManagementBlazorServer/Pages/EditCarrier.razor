@@ -1,0 +1,48 @@
+﻿@page "/EditCarrier/{CarrierId}"
+@inject CarrierService _carrierService;
+@inject NavigationManager _navigationManager;
+
+<h3>Edit Carrier</h3>
+
+@if(Carrier == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <EditForm Model="@Carrier" OnValidSubmit="@UpdateCarrierAsync">
+        <CarrierFields Carrier="@Carrier"></CarrierFields>
+        <button type="submit" class="btn btn-success">
+            <span class="oi oi-pencil"></span>
+            Update Carrier
+        </button>
+        <button type="button" class="btn btn-secondary" @onclick="Close">
+            <span class="oi oi-media-skip-backward"></span>
+            Close
+        </button>
+    </EditForm>
+}
+
+
+@code {
+    [Parameter]
+    public string CarrierId{ get; set; }
+
+    public Carrier Carrier{ get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Carrier = await _carrierService.GetCarrierAsync(int.Parse(CarrierId));
+    }
+
+    private async Task UpdateCarrierAsync()
+    {
+        await _carrierService.UpdateCarrierAsync(Carrier);
+        Close();
+    }
+
+    private void Close()
+    {
+        _navigationManager.NavigateTo("/CarrierList");
+    }
+}

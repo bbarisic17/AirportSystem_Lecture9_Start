@@ -19,6 +19,24 @@ namespace FlightManagementWebAPI.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("DomainModel.Models.Carrier", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Carriers");
+                });
+
             modelBuilder.Entity("DomainModel.Models.Flight", b =>
                 {
                     b.Property<int>("Id")
@@ -29,8 +47,8 @@ namespace FlightManagementWebAPI.Migrations
                     b.Property<string>("AirportTo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Carrier")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("CarrierId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("FlightDate")
                         .HasColumnType("datetime2");
@@ -46,7 +64,18 @@ namespace FlightManagementWebAPI.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CarrierId");
+
                     b.ToTable("Flights");
+                });
+
+            modelBuilder.Entity("DomainModel.Models.Flight", b =>
+                {
+                    b.HasOne("DomainModel.Models.Carrier", "Carrier")
+                        .WithMany()
+                        .HasForeignKey("CarrierId");
+
+                    b.Navigation("Carrier");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,44 @@
+﻿@page "/AddCarrier"
+@inject CarrierService _carrierService;
+@inject NavigationManager _navigationManager;
+<h3>Add Carrier</h3>
+
+@if(Carrier == null)
+{
+    <p>Loading..</p>
+
+}
+else
+{
+    <EditForm Model="@Carrier" OnValidSubmit="@AddCarrierAsync">
+        <CarrierFields Carrier="@Carrier"></CarrierFields>
+        <button type="submit" class="btn btn-success">
+            <span class="oi oi-pencil"></span>
+            Add Carrier
+        </button>
+        <button type="button" class="btn btn-secondary" @onclick="Close">
+            <span class="oi oi-media-skip-backward"></span>
+            Close
+        </button>
+    </EditForm>
+}
+
+@code {
+    public Carrier Carrier { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Carrier = new Carrier();
+    }
+
+    private async Task AddCarrierAsync()
+    {
+        await _carrierService.AddCarrierAsync(Carrier);
+        Close();
+    }
+
+    private void Close()
+    {
+        _navigationManager.NavigateTo("/CarrierList");
+    }
+}

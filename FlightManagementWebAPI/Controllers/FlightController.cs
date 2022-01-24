@@ -19,7 +19,7 @@ namespace FlightManagementWebAPI.Controllers
         {
             try
             {
-                var flights = _flightRepository.GetFlights();
+                var flights = _flightRepository.GetFlights(false);
                 return Ok(flights);
             }
             catch (System.Exception)
@@ -109,7 +109,7 @@ namespace FlightManagementWebAPI.Controllers
         {
             try
             {
-                return Ok(_flightRepository.GetArchivedFlights());
+                return Ok(_flightRepository.GetFlights(true));
             }
             catch (System.Exception)
             {

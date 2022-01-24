@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y3mZsdnukOb9Deb+Ws1H7B89Yqi95XUMcNSy/fI2ghRffJ7wcwWLO5CnBGU5ke86V6IDbVFr1OBowutxDubbJg==",
+  "dgSpecHash": "blLri/Zs0uK76WyqQ/WI94VRxGmn3dsBNGRh2piuLR25NasLnYudoxcFWpQlK6EujXJ7sztSSiw1FWzb4TYBFA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj",
+  "projectFilePath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -13,84 +13,84 @@ namespace FlightManagementBlazorServer.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 1 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 2 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 3 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 4 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 5 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 6 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 7 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 8 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 9 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using FlightManagementBlazorServer;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 10 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using FlightManagementBlazorServer.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 11 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using DomainModel.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\_Imports.razor"
+#line 12 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\_Imports.razor"
 using Services;
 
 #line default
@@ -104,14 +104,22 @@ using Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\Users\Bojan\Desktop\AirportSystem_Lecture5_Start\FlightManagementBlazorServer\Pages\FlightFields.razor"
+#line 36 "C:\Users\Bojan\Desktop\AirportSystem_Lecture8_Start\FlightManagementBlazorServer\Pages\FlightFields.razor"
        
     [Parameter]
     public Flight Flight { get; set; }
 
+    public List<Carrier> Carriers{ get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Carriers = await _carrierService.GetCarriersAsync();
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private CarrierService _carrierService { get; set; }
     }
 }
 #pragma warning restore 1591

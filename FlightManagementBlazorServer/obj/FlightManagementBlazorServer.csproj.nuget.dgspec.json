@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj": {}
+    "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\DomainModel\\DomainModel.csproj": {
+    "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\DomainModel\\DomainModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\DomainModel\\DomainModel.csproj",
+        "projectUniqueName": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\DomainModel\\DomainModel.csproj",
         "projectName": "DomainModel",
-        "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\DomainModel\\DomainModel.csproj",
+        "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\DomainModel\\DomainModel.csproj",
         "packagesPath": "C:\\Users\\Bojan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\DomainModel\\obj\\",
+        "outputPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\DomainModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bojan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj": {
+    "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj",
+        "projectUniqueName": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj",
         "projectName": "FlightManagementBlazorServer",
-        "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj",
+        "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementBlazorServer\\FlightManagementBlazorServer.csproj",
         "packagesPath": "C:\\Users\\Bojan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementBlazorServer\\obj\\",
+        "outputPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementBlazorServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bojan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\DomainModel\\DomainModel.csproj": {
-                "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\DomainModel\\DomainModel.csproj"
+              "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\DomainModel\\DomainModel.csproj": {
+                "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\DomainModel\\DomainModel.csproj"
               }
             }
           }

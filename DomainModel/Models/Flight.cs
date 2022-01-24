@@ -12,10 +12,12 @@ namespace DomainModel.Models
         public string Number { get; set; }
         public DateTime FlightDate { get; set; }
         public string FlightTime { get; set; }
-        public string Carrier { get; set; }
         public string AirportTo { get; set; }
 
         public bool IsArchived { get; set; }
+
+        public int? CarrierId { get; set; }
+        public Carrier Carrier { get; set; }
 
     }
 }

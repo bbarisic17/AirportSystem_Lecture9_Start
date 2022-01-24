@@ -32,6 +32,7 @@ namespace FlightManagementBlazorServer
             services.AddSingleton<WeatherForecastService>();
             services.AddHttpClient();
             services.AddScoped<FlightService>();
+            services.AddScoped<CarrierService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

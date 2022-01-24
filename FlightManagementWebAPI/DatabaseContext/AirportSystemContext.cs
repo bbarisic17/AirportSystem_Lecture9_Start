@@ -13,5 +13,6 @@ namespace FlightManagementWebAPI.DatabaseContext
 
         //tablica
         public DbSet<Flight> Flights { get; set; }
+        public DbSet<Carrier> Carriers { get; set; }
     }
 }

@@ -1,0 +1,47 @@
+﻿@page "/EditFlight/{FlightId}"
+@inject FlightService _flightService;
+@inject NavigationManager _navigationManager;
+<h3>Edit Flight</h3>
+
+@if(Flight == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <EditForm Model="@Flight"  OnValidSubmit="@UpdateFlightAsync">
+        <FlightFields Flight="@Flight"></FlightFields>
+        <button type="submit" class="btn btn-success">
+            <span class="oi-pencil"></span>
+            Update Flight
+        </button>
+        <button type="button" class="btn btn-secondary" @onclick="Close">
+            <span class="oi oi-media-skip-backward"></span>
+            Close
+        </button>
+    </EditForm>
+
+}
+
+@code {
+    [Parameter]
+    public string FlightId{ get; set; }
+
+    public Flight Flight{ get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Flight = await _flightService.GetFlightAsync(int.Parse(FlightId));
+    }
+
+    private void Close()
+    {
+        _navigationManager.NavigateTo("/");
+    }
+
+    private async Task UpdateFlightAsync()
+    {
+        await _flightService.UpdateFlight(Flight);
+        Close();
+    }
+}

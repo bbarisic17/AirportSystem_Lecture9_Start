@@ -6000,11 +6000,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementWebAPI\\FlightManagementWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementWebAPI\\FlightManagementWebAPI.csproj",
       "projectName": "FlightManagementWebAPI",
-      "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementWebAPI\\FlightManagementWebAPI.csproj",
+      "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementWebAPI\\FlightManagementWebAPI.csproj",
       "packagesPath": "C:\\Users\\Bojan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\FlightManagementWebAPI\\obj\\",
+      "outputPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\FlightManagementWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bojan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6021,8 +6021,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\DomainModel\\DomainModel.csproj": {
-              "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture5_Start\\DomainModel\\DomainModel.csproj"
+            "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\DomainModel\\DomainModel.csproj": {
+              "projectPath": "C:\\Users\\Bojan\\Desktop\\AirportSystem_Lecture8_Start\\DomainModel\\DomainModel.csproj"
             }
           }
         }
